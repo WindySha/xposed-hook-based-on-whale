@@ -36,7 +36,7 @@ ext {
     reliedRepoName = 'xposed-api-lib'
     publishVersion = '0.1.1-snapshot'
     desc = 'This is xposed hook api based on whale.'
-    website = 'https://github.com/WindySha/Xpatch'
+    website = 'https://github.com/WindySha/xposed-hook-based-on-whale'
     licences = ['Apache-2.0']
 }
 
