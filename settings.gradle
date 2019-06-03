@@ -1,0 +1,2 @@
+include ':app', ':xposed_api', ':whale'
+rootProject.name='xposed-on-whale'

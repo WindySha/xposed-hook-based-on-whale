@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0-beta01'
+        classpath 'com.novoda:bintray-release:0.9.1'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://dl.bintray.com/windysha/maven/' }
+    }
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
+
+ext {
+    userOrg = 'windysha'
+    groupId = 'com.wind.xposed'
+    repoName = 'xposed-on-whale'
+    reliedRepoName = 'xposed-api-lib'
+    publishVersion = '0.1.1-snapshot'
+    desc = 'This is xposed hook api based on whale.'
+    website = 'https://github.com/WindySha/Xpatch'
+    licences = ['Apache-2.0']
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
