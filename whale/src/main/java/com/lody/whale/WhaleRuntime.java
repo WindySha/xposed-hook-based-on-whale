@@ -67,7 +67,7 @@ public class WhaleRuntime {
 
     public static native void enforceDisableHiddenAPIPolicy();
 
-    private static native void reserved0();
+    public static native void reserved0();
 
-    private static native void reserved1();
+    public static native void reserved1();
 }

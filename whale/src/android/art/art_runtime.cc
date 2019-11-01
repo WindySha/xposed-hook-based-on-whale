@@ -69,7 +69,7 @@ bool ArtRuntime::OnLoad(JavaVM *vm, JNIEnv *env, jclass java_class) {
 
     size_t entrypoint_filed_size = (api_level_ <= ANDROID_LOLLIPOP) ? 8
                                                                     : kPointerSize;
-    u4 expected_access_flags = kAccPrivate | kAccStatic | kAccNative;
+    u4 expected_access_flags = kAccPublic | kAccStatic | kAccNative;
     jmethodID reserved0 = env->GetStaticMethodID(java_class, kMethodReserved0, "()V");
     jmethodID reserved1 = env->GetStaticMethodID(java_class, kMethodReserved1, "()V");
 

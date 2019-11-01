@@ -7,7 +7,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-beta01'
+        classpath 'com.android.tools.build:gradle:3.5.1'
         classpath 'com.novoda:bintray-release:0.9.1'
         
         // NOTE: Do not place your application dependencies here; they belong
@@ -34,14 +34,15 @@ ext {
     groupId = 'com.wind.xposed'
     repoName = 'xposed-on-whale'
     reliedRepoName = 'xposed-api-lib'
-    publishVersion = '0.1.1'
+    publishVersion = '0.1.2'
     desc = 'This is xposed hook api based on whale.'
     website = 'https://github.com/WindySha/xposed-hook-based-on-whale'
     licences = ['Apache-2.0']
 }
 
 // xposed_api模块不需要升级,需要升级改为true
-tasks.getByPath(":xposed_api:bintrayUpload").enabled = false
+tasks.getByPath(":xposed_api:bintrayUpload").enabled = true
+tasks.getByPath(":whale:bintrayUpload").enabled = true
 
 task clean(type: Delete) {
     delete rootProject.buildDir
