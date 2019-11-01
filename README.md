@@ -7,14 +7,14 @@ This is a lib to used for hook any android java codes by  xposed api. It is base
 # Usage
 **gradle**
 ```
-implementation 'com.wind.xposed:xposed-on-whale:0.1.1'
+implementation 'com.wind.xposed:xposed-on-whale:0.1.2'
 ```  
 **maven**
 ```
 <dependency>
 	<groupId>com.wind.xposed</groupId>
 	<artifactId>xposed-on-whale</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2</version>
 	<type>pom</type>
 </dependency>
 ```
@@ -30,6 +30,22 @@ XposedBridge.hookAllMethods(Class<?> hookClass, String methodName, XC_MethodHook
 
 XposedBridge.hookAllConstructors(Class<?> hookClass, XC_MethodHook callback)
 
+```
+
+# Proguard
+```
+-keep class de.robv.android.xposed.**{*;}
+-keep class com.lody.whale.**{*;}
+-keep class com.lody.whale.WhaleRuntime{
+  *;
+  private *;
+  public *;
+  native <methods>;
+}
+
+-keepclasseswithmembers class * {
+    native <methods>;
+}
 ```
 
 # Thanks
