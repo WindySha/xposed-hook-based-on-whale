@@ -7,14 +7,14 @@ This is a lib to used for hook any android java codes by  xposed api. It is base
 # Usage
 **gradle**
 ```
-implementation 'com.wind.xposed:xposed-on-whale:0.1.2'
+implementation 'com.wind.xposed:xposed-on-whale:0.1.3'
 ```  
 **maven**
 ```
 <dependency>
 	<groupId>com.wind.xposed</groupId>
 	<artifactId>xposed-on-whale</artifactId>
-	<version>0.1.2</version>
+	<version>0.1.3</version>
 	<type>pom</type>
 </dependency>
 ```
