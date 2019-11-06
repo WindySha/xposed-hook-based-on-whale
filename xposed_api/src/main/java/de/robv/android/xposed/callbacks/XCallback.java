@@ -51,7 +51,11 @@ public abstract class XCallback implements Comparable<XCallback> {
 
 		/** @hide */
 		protected Param(CopyOnWriteSortedSet<? extends XCallback> callbacks) {
-			this.callbacks = callbacks.getSnapshot();
+			if (callbacks != null) {
+				this.callbacks = callbacks.getSnapshot();
+			} else {
+				this.callbacks = null;
+			}
 		}
 
 		/**
@@ -98,8 +102,10 @@ public abstract class XCallback implements Comparable<XCallback> {
 
 	/** @hide */
 	public static void callAll(Param param) {
-		if (param.callbacks == null)
-			throw new IllegalStateException("This object was not created for use with callAll");
+		if (param.callbacks == null) {
+			//throw new IllegalStateException("This object was not created for use with callAll");
+			return;
+		}
 
 		for (int i = 0; i < param.callbacks.length; i++) {
 			try {

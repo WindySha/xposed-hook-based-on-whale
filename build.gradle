@@ -34,7 +34,7 @@ ext {
     groupId = 'com.wind.xposed'
     repoName = 'xposed-on-whale'
     reliedRepoName = 'xposed-api-lib'
-    publishVersion = '0.1.2'
+    publishVersion = '0.1.3'
     desc = 'This is xposed hook api based on whale.'
     website = 'https://github.com/WindySha/xposed-hook-based-on-whale'
     licences = ['Apache-2.0']
